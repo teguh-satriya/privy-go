@@ -5,6 +5,7 @@ package cakes.v1;
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
+import "validate/validate.proto";
 
 option go_package = "github.com/teguh-satriya/privy-go/proto/cakes/v1;cakesv1";
 
@@ -75,10 +76,30 @@ message CreateCakeRequest {
       description: "Request Create Cake"
     }
   };
-  string title = 1;
+  string title = 1 [
+    (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+      description: "Cake Title"
+      min_length: 3
+      max_length: 150
+    },
+    (validate.rules).string.ignore_empty = false,
+    (validate.rules).string.min_len = 3,
+    (validate.rules).string.max_len = 150
+  ];
   string description = 2;
-  int32 rating = 3;
-  string image = 4;
+  int32 rating = 3 [
+    (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+      description: "Cake Rating"
+    },
+    (validate.rules).int32.ignore_empty = false
+  ];
+  string image = 4 [
+    (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+      description: "Image URL"
+      format: "uri"
+    },
+    (validate.rules).string.uri = true
+  ];
 }
 message CreateCakeResponse {
   option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_schema) = {
@@ -105,11 +126,29 @@ message ListCakesResponse {
 }
 
 message UpdateCakeRequest {
-  int32 id = 1;
-  string title = 2;
+  int32 id = 1 [
+    (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+      description: "Cake ID"
+    },
+    (validate.rules).int32.ignore_empty = false
+  ];
+  string title = 2  [
+    (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+      description: "Cake Title"
+      max_length: 150
+    },
+    (validate.rules).string.max_len = 150
+  ];
   string description = 3;
   int32 rating = 4;
-  string image = 5;
+  string image = 5 [
+    (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+      description: "Image URL"
+      format: "uri"
+    },
+    (validate.rules).string.ignore_empty = true,
+    (validate.rules).string.uri = true
+  ];
 }
 message UpdateCakeResponse {
   Cake data = 1;

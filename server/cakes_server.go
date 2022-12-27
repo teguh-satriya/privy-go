@@ -7,8 +7,11 @@ import (
 
 type CakesServer struct {
 	cakesv1.UnimplementedCakesServiceServer
-	listCakesService services.ListCakesService
-	getCakesService  services.GetCakesService
+	listCakesService  services.ListCakesService
+	getCakesService   services.GetCakesService
+	createCakeService services.CreateCakesService
+	updateCakeService services.UpdateCakesService
+	deleteCakeService services.DeleteCakesService
 }
 
 type CakesServerSetter func(server *CakesServer)
@@ -32,5 +35,23 @@ func WithListCakesService(listCakesService services.ListCakesService) CakesServe
 func WithGetCakesService(getCakesService services.GetCakesService) CakesServerSetter {
 	return func(as *CakesServer) {
 		as.getCakesService = getCakesService
+	}
+}
+
+func WithUpdateCakesService(updateCakeService services.UpdateCakesService) CakesServerSetter {
+	return func(as *CakesServer) {
+		as.updateCakeService = updateCakeService
+	}
+}
+
+func WithCreateCakesService(createCakeService services.CreateCakesService) CakesServerSetter {
+	return func(as *CakesServer) {
+		as.createCakeService = createCakeService
+	}
+}
+
+func WithDeleteCakesService(deleteCakeService services.DeleteCakesService) CakesServerSetter {
+	return func(as *CakesServer) {
+		as.deleteCakeService = deleteCakeService
 	}
 }

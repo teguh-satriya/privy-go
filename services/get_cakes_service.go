@@ -5,6 +5,7 @@ import (
 	"time"
 
 	repositories "github.com/teguh-satriya/privy-go/repository"
+	"github.com/teguh-satriya/privy-go/trouble"
 )
 
 type GetCakesService interface {
@@ -34,6 +35,10 @@ func (s *GetCakesServiceImpl) Call(ctx context.Context, params *GetCakeParams) (
 
 	if err != nil {
 		return nil, err
+	}
+
+	if data == nil {
+		return nil, trouble.CAKE_NOT_FOUND
 	}
 
 	res = &GetCakeResult{

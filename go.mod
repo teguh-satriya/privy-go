@@ -3,7 +3,7 @@ module github.com/teguh-satriya/privy-go
 go 1.19
 
 require (
-	github.com/google/uuid v1.3.0
+	github.com/envoyproxy/protoc-gen-validate v0.6.7
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.11.3
 	google.golang.org/genproto v0.0.0-20220930163606-c98284e70a91
 	google.golang.org/grpc v1.50.0

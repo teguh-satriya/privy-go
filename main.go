@@ -38,10 +38,16 @@ func main() {
 
 	listCakesService := services.NewListCakesService(repo)
 	getCakesService := services.NewGetCakesService(repo)
+	createCakeService := services.NewCreateCakesService(repo)
+	updateCakeService := services.NewUpdateCakesService(repo)
+	deleteCakeService := services.NewDeleteCakesService(repo)
 
 	cakesServiceServer := server.NewCakesServer(
 		server.WithListCakesService(listCakesService),
 		server.WithGetCakesService(getCakesService),
+		server.WithCreateCakesService(createCakeService),
+		server.WithUpdateCakesService(updateCakeService),
+		server.WithDeleteCakesService(deleteCakeService),
 	)
 
 	// NOTE: Initialize gRPC Dial Option

@@ -151,6 +151,7 @@
         "parameters": [
           {
             "name": "id",
+            "description": "Cake ID",
             "in": "path",
             "required": true,
             "type": "integer",
@@ -164,7 +165,9 @@
               "type": "object",
               "properties": {
                 "title": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Cake Title",
+                  "maxLength": 150
                 },
                 "description": {
                   "type": "string"
@@ -174,7 +177,9 @@
                   "format": "int32"
                 },
                 "image": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "uri",
+                  "description": "Image URL"
                 }
               }
             }
@@ -248,17 +253,23 @@
       "type": "object",
       "properties": {
         "title": {
-          "type": "string"
+          "type": "string",
+          "description": "Cake Title",
+          "maxLength": 150,
+          "minLength": 3
         },
         "description": {
           "type": "string"
         },
         "rating": {
           "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "description": "Cake Rating"
         },
         "image": {
-          "type": "string"
+          "type": "string",
+          "format": "uri",
+          "description": "Image URL"
         }
       },
       "description": "Request Create Cake",

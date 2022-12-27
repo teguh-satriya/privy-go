@@ -75,3 +75,35 @@ func (r *CakesRepositoryImpl) Get(ctx context.Context, id int) (*models.Cakes, e
 
 	return cake, nil
 }
+
+func (s *CakesRepositoryImpl) Create(ctx context.Context, cake *models.Cakes) (*int64, error) {
+	res, err := s.db.NamedExecContext(ctx, CAKES_REPOSITORY_CREATE_SQL, cake)
+	if err != nil {
+		return nil, err
+	}
+
+	lastId, err := res.LastInsertId()
+	if err != nil {
+		return nil, err
+	}
+
+	return &lastId, nil
+}
+
+func (s *CakesRepositoryImpl) Update(ctx context.Context, cake *models.Cakes) error {
+	_, err := s.db.NamedExecContext(ctx, CAKES_REPOSITORY_UPDATE_SQL, cake)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (s *CakesRepositoryImpl) Delete(ctx context.Context, id int) error {
+	_, err := s.db.ExecContext(ctx, CAKES_REPOSITORY_DELETE_SQL, id)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
