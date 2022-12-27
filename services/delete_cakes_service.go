@@ -6,6 +6,7 @@ import (
 
 	repositories "github.com/teguh-satriya/privy-go/repository"
 	"github.com/teguh-satriya/privy-go/trouble"
+	"google.golang.org/grpc/grpclog"
 )
 
 type DeleteCakesService interface {
@@ -13,7 +14,8 @@ type DeleteCakesService interface {
 }
 
 type DeleteCakesServiceImpl struct {
-	repo repositories.CakesRepository
+	repo   repositories.CakesRepository
+	logger grpclog.LoggerV2
 }
 
 type DeleteCakeParams struct {
@@ -33,7 +35,8 @@ type DeleteCakeResult struct {
 func (s *DeleteCakesServiceImpl) Call(ctx context.Context, params *DeleteCakeParams) (res *DeleteCakeResult, err error) {
 	cakeData, err := s.repo.Get(ctx, params.ID)
 	if err != nil {
-		return nil, err
+		s.logger.Errorf("Failed to get cakes: %v", err)
+		return nil, trouble.INTERNAL_SERVER_ERROR
 	}
 
 	if cakeData == nil {
@@ -42,7 +45,8 @@ func (s *DeleteCakesServiceImpl) Call(ctx context.Context, params *DeleteCakePar
 
 	err = s.repo.Delete(ctx, params.ID)
 	if err != nil {
-		return nil, err
+		s.logger.Errorf("Failed to delete cakes: %v", err)
+		return nil, trouble.INTERNAL_SERVER_ERROR
 	}
 
 	res = &DeleteCakeResult{
@@ -61,8 +65,10 @@ func (s *DeleteCakesServiceImpl) Call(ctx context.Context, params *DeleteCakePar
 
 func NewDeleteCakesService(
 	repo repositories.CakesRepository,
+	logger grpclog.LoggerV2,
 ) DeleteCakesService {
 	return &DeleteCakesServiceImpl{
-		repo: repo,
+		repo:   repo,
+		logger: logger,
 	}
 }

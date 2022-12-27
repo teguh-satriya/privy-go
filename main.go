@@ -36,11 +36,11 @@ func main() {
 
 	repo := sql.NewCakesRepository(db, logger)
 
-	listCakesService := services.NewListCakesService(repo)
-	getCakesService := services.NewGetCakesService(repo)
-	createCakeService := services.NewCreateCakesService(repo)
-	updateCakeService := services.NewUpdateCakesService(repo)
-	deleteCakeService := services.NewDeleteCakesService(repo)
+	listCakesService := services.NewListCakesService(repo, logger)
+	getCakesService := services.NewGetCakesService(repo, logger)
+	createCakeService := services.NewCreateCakesService(repo, logger)
+	updateCakeService := services.NewUpdateCakesService(repo, logger)
+	deleteCakeService := services.NewDeleteCakesService(repo, logger)
 
 	cakesServiceServer := server.NewCakesServer(
 		server.WithListCakesService(listCakesService),

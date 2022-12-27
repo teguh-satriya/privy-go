@@ -53,6 +53,6 @@ mock:
 	mockery --all --output mocks/package --srcpkg google.golang.org/grpc/grpclog
 
 test: 
-	gotestsum --format testname --junitfile junit.xml -- -coverprofile=coverage.lcov.info -covermode count ./...
+	gotestsum --format testname --junitfile junit.xml -- -coverprofile=coverage.lcov.info -covermode count ./config/... ./models/... ./server/... ./services/...
 	gocover-cobertura < coverage.lcov.info > coverage.xml
 	gototal-cobertura < coverage.xml

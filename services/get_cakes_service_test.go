@@ -14,19 +14,19 @@ import (
 	"github.com/teguh-satriya/privy-go/trouble"
 )
 
-type MockCreateCakesService struct {
+type MockGetCakesService struct {
 	cakeRepository *mockRepo.CakesRepository
 	logger         *mockPackage.LoggerV2
 }
 
-func TestCreateCakesService_Call(t *testing.T) {
+func TestGetCakesService_Call(t *testing.T) {
 	type input struct {
 		ctx    context.Context
-		params *services.CreateCakeParams
+		params *services.GetCakeParams
 	}
 
 	type output struct {
-		result *services.CreateCakeResult
+		result *services.GetCakeResult
 		err    error
 	}
 
@@ -34,17 +34,13 @@ func TestCreateCakesService_Call(t *testing.T) {
 		name string
 		in   *input
 		out  *output
-		on   func(*MockCreateCakesService, *input, *output)
-	}
-
-	createParams := &services.CreateCakeParams{
-		Title:       "test",
-		Description: "test desc",
-		Rating:      10,
-		Image:       "https://img.taste.com.au/ynYrqkOs/w720-h480-cfill-q80/taste/2016/11/sunny-lemon-cheesecake-102220-1.jpeg",
+		on   func(*MockGetCakesService, *input, *output)
 	}
 
 	cakeId := 1
+	getParams := &services.GetCakeParams{
+		ID: cakeId,
+	}
 
 	cakeModel := &models.Cakes{
 		ID:          cakeId,
@@ -56,7 +52,7 @@ func TestCreateCakesService_Call(t *testing.T) {
 		CreatedAt:   time.Now(),
 	}
 
-	createResponse := &services.CreateCakeResult{
+	getResponse := &services.GetCakeResult{
 		ID:          cakeId,
 		Title:       "test",
 		Description: "test desc",
@@ -68,67 +64,30 @@ func TestCreateCakesService_Call(t *testing.T) {
 
 	for _, tt := range []testcase{
 		{
-			name: "ERROR_ON_CREATE",
-			in: &input{
-				ctx:    context.Background(),
-				params: createParams,
-			},
-			out: &output{
-				err:    trouble.INTERNAL_SERVER_ERROR,
-				result: nil,
-			},
-			on: func(mc *MockCreateCakesService, i *input, o *output) {
-				cakeModelPost := &models.Cakes{
-					Title:       createParams.Title,
-					Description: createParams.Description,
-					Rating:      createParams.Rating,
-					Image:       createParams.Image,
-				}
-
-				mc.cakeRepository.On("Create", i.ctx, cakeModelPost).Return(nil, o.err)
-			},
-		},
-		{
 			name: "ERROR_ON_GET",
 			in: &input{
 				ctx:    context.Background(),
-				params: createParams,
+				params: getParams,
 			},
 			out: &output{
 				err:    trouble.INTERNAL_SERVER_ERROR,
 				result: nil,
 			},
-			on: func(mc *MockCreateCakesService, i *input, o *output) {
-				cakeModelPost := &models.Cakes{
-					Title:       createParams.Title,
-					Description: createParams.Description,
-					Rating:      createParams.Rating,
-					Image:       createParams.Image,
-				}
-				lastInsertCakeID := int64(cakeId)
-				mc.cakeRepository.On("Create", i.ctx, cakeModelPost).Return(&lastInsertCakeID, nil)
+			on: func(mc *MockGetCakesService, i *input, o *output) {
 				mc.cakeRepository.On("Get", i.ctx, cakeId).Return(nil, o.err)
 			},
 		},
 		{
-			name: "DATA_NOT_FOUND",
+			name: "NOT_FOUND",
 			in: &input{
 				ctx:    context.Background(),
-				params: createParams,
+				params: getParams,
 			},
 			out: &output{
 				err:    trouble.CAKE_NOT_FOUND,
 				result: nil,
 			},
-			on: func(mc *MockCreateCakesService, i *input, o *output) {
-				cakeModelPost := &models.Cakes{
-					Title:       createParams.Title,
-					Description: createParams.Description,
-					Rating:      createParams.Rating,
-					Image:       createParams.Image,
-				}
-				lastInsertCakeID := int64(cakeId)
-				mc.cakeRepository.On("Create", i.ctx, cakeModelPost).Return(&lastInsertCakeID, nil)
+			on: func(mc *MockGetCakesService, i *input, o *output) {
 				mc.cakeRepository.On("Get", i.ctx, cakeId).Return(nil, nil)
 			},
 		},
@@ -136,27 +95,20 @@ func TestCreateCakesService_Call(t *testing.T) {
 			name: "OK",
 			in: &input{
 				ctx:    context.Background(),
-				params: createParams,
+				params: getParams,
 			},
 			out: &output{
 				err:    nil,
-				result: createResponse,
+				result: getResponse,
 			},
-			on: func(mc *MockCreateCakesService, i *input, o *output) {
-				cakeModelPost := &models.Cakes{
-					Title:       createParams.Title,
-					Description: createParams.Description,
-					Rating:      createParams.Rating,
-					Image:       createParams.Image,
-				}
-				lastInsertCakeID := int64(cakeId)
-				mc.cakeRepository.On("Create", i.ctx, cakeModelPost).Return(&lastInsertCakeID, nil)
+			on: func(mc *MockGetCakesService, i *input, o *output) {
+
 				mc.cakeRepository.On("Get", i.ctx, cakeId).Return(cakeModel, nil)
 			},
 		},
 	} {
 		t.Run(tt.name, func(t *testing.T) {
-			m := &MockCreateCakesService{
+			m := &MockGetCakesService{
 				cakeRepository: &mockRepo.CakesRepository{},
 				logger:         &mockPackage.LoggerV2{},
 			}
@@ -169,7 +121,7 @@ func TestCreateCakesService_Call(t *testing.T) {
 				tt.on(m, tt.in, tt.out)
 			}
 
-			subject := services.NewCreateCakesService(m.cakeRepository, m.logger)
+			subject := services.NewGetCakesService(m.cakeRepository, m.logger)
 			result, err := subject.Call(tt.in.ctx, tt.in.params)
 
 			if tt.out.err != nil {

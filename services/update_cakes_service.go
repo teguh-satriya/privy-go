@@ -7,6 +7,7 @@ import (
 
 	repositories "github.com/teguh-satriya/privy-go/repository"
 	"github.com/teguh-satriya/privy-go/trouble"
+	"google.golang.org/grpc/grpclog"
 )
 
 type UpdateCakesService interface {
@@ -14,7 +15,8 @@ type UpdateCakesService interface {
 }
 
 type UpdateCakesServiceImpl struct {
-	repo repositories.CakesRepository
+	repo   repositories.CakesRepository
+	logger grpclog.LoggerV2
 }
 
 type UpdateCakeParams struct {
@@ -38,7 +40,8 @@ type UpdateCakeResult struct {
 func (s *UpdateCakesServiceImpl) Call(ctx context.Context, params *UpdateCakeParams) (res *UpdateCakeResult, err error) {
 	cakeData, err := s.repo.Get(ctx, params.ID)
 	if err != nil {
-		return nil, err
+		s.logger.Errorf("Failed to get cake: %v", err)
+		return nil, trouble.INTERNAL_SERVER_ERROR
 	}
 
 	if cakeData == nil {
@@ -63,7 +66,8 @@ func (s *UpdateCakesServiceImpl) Call(ctx context.Context, params *UpdateCakePar
 
 	err = s.repo.Update(ctx, cakeData)
 	if err != nil {
-		return nil, err
+		s.logger.Errorf("Failed to update cake: %v", err)
+		return nil, trouble.INTERNAL_SERVER_ERROR
 	}
 
 	res = &UpdateCakeResult{
@@ -82,8 +86,10 @@ func (s *UpdateCakesServiceImpl) Call(ctx context.Context, params *UpdateCakePar
 
 func NewUpdateCakesService(
 	repo repositories.CakesRepository,
+	logger grpclog.LoggerV2,
 ) UpdateCakesService {
 	return &UpdateCakesServiceImpl{
-		repo: repo,
+		repo:   repo,
+		logger: logger,
 	}
 }

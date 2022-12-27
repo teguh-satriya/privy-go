@@ -1,93 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="0" failures="0" errors="0" time="1.123075">
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go" timestamp="2022-12-27T23:51:03+07:00">
+<testsuites tests="22" failures="0" errors="0" time="0.268103">
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/config" timestamp="2022-12-28T01:09:58+07:00">
 		<properties>
 			<property name="go.version" value="go1.19.1 linux/amd64"></property>
 		</properties>
 	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/config" timestamp="2022-12-27T23:51:03+07:00">
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/models" timestamp="2022-12-28T01:09:58+07:00">
 		<properties>
 			<property name="go.version" value="go1.19.1 linux/amd64"></property>
 		</properties>
 	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/library/driver" timestamp="2022-12-27T23:51:03+07:00">
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/server" timestamp="2022-12-28T01:09:58+07:00">
 		<properties>
 			<property name="go.version" value="go1.19.1 linux/amd64"></property>
 		</properties>
 	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/library/troublemaker" timestamp="2022-12-27T23:51:03+07:00">
+	<testsuite tests="22" failures="0" time="0.003000" name="github.com/teguh-satriya/privy-go/services" timestamp="2022-12-28T01:09:58+07:00">
 		<properties>
 			<property name="go.version" value="go1.19.1 linux/amd64"></property>
 		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/library/troublemaker" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/package" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/proto" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/proto/cakes/v1" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/repository" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/server" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/services" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/models" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/proto/cakes/v1" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/repository" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/repository/mysql" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/server" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.002000" name="github.com/teguh-satriya/privy-go/services" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
-	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/trouble" timestamp="2022-12-27T23:51:03+07:00">
-		<properties>
-			<property name="go.version" value="go1.19.1 linux/amd64"></property>
-		</properties>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestCreateCakesService_Call/ERROR_ON_CREATE" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestCreateCakesService_Call/ERROR_ON_GET" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestCreateCakesService_Call/DATA_NOT_FOUND" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestCreateCakesService_Call/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestCreateCakesService_Call" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestDeleteCakesService_Call/ERROR_ON_GET" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestDeleteCakesService_Call/NOT_FOUND" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestDeleteCakesService_Call/ERROR_ON_DELETE" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestDeleteCakesService_Call/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestDeleteCakesService_Call" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestGetCakesService_Call/ERROR_ON_GET" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestGetCakesService_Call/NOT_FOUND" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestGetCakesService_Call/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestGetCakesService_Call" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestListCakesService_Call/ERROR_ON_GET" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestListCakesService_Call/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestListCakesService_Call" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestUpdateCakesService_Call/ERROR_ON_GET" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestUpdateCakesService_Call/NOT_FOUND" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestUpdateCakesService_Call/ERROR_ON_UPDATE" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestUpdateCakesService_Call/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/services" name="TestUpdateCakesService_Call" time="0.000000"></testcase>
 	</testsuite>
 </testsuites>

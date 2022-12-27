@@ -7,6 +7,7 @@ import (
 	"github.com/teguh-satriya/privy-go/models"
 	repositories "github.com/teguh-satriya/privy-go/repository"
 	"github.com/teguh-satriya/privy-go/trouble"
+	"google.golang.org/grpc/grpclog"
 )
 
 type CreateCakesService interface {
@@ -14,7 +15,8 @@ type CreateCakesService interface {
 }
 
 type CreateCakesServiceImpl struct {
-	repo repositories.CakesRepository
+	repo   repositories.CakesRepository
+	logger grpclog.LoggerV2
 }
 
 type CreateCakeParams struct {
@@ -44,12 +46,14 @@ func (s *CreateCakesServiceImpl) Call(ctx context.Context, params *CreateCakePar
 
 	id, err := s.repo.Create(ctx, cake)
 	if err != nil {
-		return nil, err
+		s.logger.Errorf("Failed to create cake: %v", err)
+		return nil, trouble.INTERNAL_SERVER_ERROR
 	}
 
 	cakeData, err := s.repo.Get(ctx, int(*id))
 	if err != nil {
-		return nil, err
+		s.logger.Errorf("Failed to get cake: %v", err)
+		return nil, trouble.INTERNAL_SERVER_ERROR
 	}
 
 	if cakeData == nil {
@@ -72,8 +76,10 @@ func (s *CreateCakesServiceImpl) Call(ctx context.Context, params *CreateCakePar
 
 func NewCreateCakesService(
 	repo repositories.CakesRepository,
+	logger grpclog.LoggerV2,
 ) CreateCakesService {
 	return &CreateCakesServiceImpl{
-		repo: repo,
+		repo:   repo,
+		logger: logger,
 	}
 }

@@ -5,6 +5,8 @@ import (
 
 	"github.com/teguh-satriya/privy-go/models"
 	repositories "github.com/teguh-satriya/privy-go/repository"
+	"github.com/teguh-satriya/privy-go/trouble"
+	"google.golang.org/grpc/grpclog"
 )
 
 type ListCakesService interface {
@@ -12,7 +14,8 @@ type ListCakesService interface {
 }
 
 type ListCakesServiceImpl struct {
-	repo repositories.CakesRepository
+	repo   repositories.CakesRepository
+	logger grpclog.LoggerV2
 }
 
 type ListCakeParams struct{}
@@ -25,7 +28,8 @@ func (s *ListCakesServiceImpl) Call(ctx context.Context) (res *ListCakeResult, e
 	data, err := s.repo.List(ctx)
 
 	if err != nil {
-		return nil, err
+		s.logger.Errorf("Failed to get cakes: %v", err)
+		return nil, trouble.INTERNAL_SERVER_ERROR
 	}
 
 	res = &ListCakeResult{
@@ -37,8 +41,10 @@ func (s *ListCakesServiceImpl) Call(ctx context.Context) (res *ListCakeResult, e
 
 func NewListCakesService(
 	repo repositories.CakesRepository,
+	logger grpclog.LoggerV2,
 ) ListCakesService {
 	return &ListCakesServiceImpl{
-		repo: repo,
+		repo:   repo,
+		logger: logger,
 	}
 }
