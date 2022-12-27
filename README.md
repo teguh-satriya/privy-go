@@ -12,3 +12,7 @@ If you want to run migration
 * create `.env` file (you can copy example parameters feom `.env.example`)
 * run `sudo make prepare-migration` to download `migrate`
 * then run `make run-migration`
+
+To run test
+* run `make mock`
+* then run `make test`

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="0" errors="0" time="1.123075">
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/config" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/library/driver" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/library/troublemaker" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/library/troublemaker" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/package" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/proto" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/proto/cakes/v1" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/repository" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/server" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/mocks/services" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/models" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/proto/cakes/v1" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/repository" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/repository/mysql" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/server" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.002000" name="github.com/teguh-satriya/privy-go/services" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/trouble" timestamp="2022-12-27T23:51:03+07:00">
+		<properties>
+			<property name="go.version" value="go1.19.1 linux/amd64"></property>
+		</properties>
+	</testsuite>
+</testsuites>
