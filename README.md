@@ -4,7 +4,7 @@
 
 
 **How To Run**
-* run `make mod` to download dependencies
+* run `make setup` to download dependencies
 * run `make develop` to debug localy
 
 If you want to run migration
