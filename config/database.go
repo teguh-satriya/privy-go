@@ -3,7 +3,7 @@ package config
 import "fmt"
 
 func GetDatabaseConnectionString() string {
-	return fmt.Sprintf("%s:%s@(%s:%s)/%s",
+	return fmt.Sprintf("%s:%s@(%s:%s)/%s?parseTime=true",
 		Getenv("DATABASE_USER", "root"),
 		Getenv("DATABASE_PASSWORD", ""),
 		Getenv("DATABASE_HOST", "localhost"),
