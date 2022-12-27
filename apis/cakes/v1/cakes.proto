@@ -1,0 +1,133 @@
+syntax = "proto3";
+
+package cakes.v1; 
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option go_package = "github.com/teguh-satriya/privy-go/proto/cakes/v1;cakesv1";
+
+service CakesService {
+  rpc CreateCake(CreateCakeRequest) returns (CreateCakeResponse) {
+    option (google.api.http) = {
+      post: "/v1/cakes"
+      body: "*"
+    };
+
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      operation_id: "CreateCake"
+      summary: "Create Cake"
+      tags: "Cake"
+    };
+  };
+  rpc GetCake(GetCakeRequest) returns (GetCakeResponse) {
+    option (google.api.http) = {
+      get: "/v1/cakes/{id}"
+    };
+
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      operation_id: "GetCake"
+      summary: "Get Cake"
+      tags: "Cake"
+    };
+  };
+  rpc ListCakes(ListCakesRequest) returns (ListCakesResponse) {
+    option (google.api.http) = {
+      get: "/v1/cakes"
+    };
+
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      operation_id: "ListCakes"
+      summary: "List Cakes"
+      tags: "Cake"
+    };
+  };
+  rpc UpdateCake(UpdateCakeRequest) returns (UpdateCakeResponse) {
+    option (google.api.http) = {
+      patch: "/v1/cakes/{id}",
+      body: "*"
+    };
+
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      operation_id: "UpdateCake"
+      summary: "Update Cake"
+      tags: "Cake"
+    };
+  };
+  rpc DeleteCake(DeleteCakeRequest) returns (DeleteCakeResponse) {
+    option (google.api.http) = {
+      delete: "/v1/cakes/{id}"
+    };
+
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      operation_id: "DeleteCake"
+      summary: "Delete Cake"
+      tags: "Cake"
+    };
+  };
+}
+
+message CreateCakeRequest {
+  option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_schema) = {
+    json_schema: {
+      title: "CreateCakeRequest"
+      description: "Request Create Cake"
+    }
+  };
+  string title = 1;
+  string description = 2;
+  int32 rating = 3;
+  string image = 4;
+}
+message CreateCakeResponse {
+  option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_schema) = {
+    json_schema: {
+      title: "CreateCakeRequest"
+      description: "Request Create Cake"
+    }
+  };
+  Cake data = 1;
+}
+
+message GetCakeRequest {
+  string id = 1;
+}
+message GetCakeResponse {
+  Cake data = 1;
+}
+
+message ListCakesRequest {
+}
+
+message ListCakesResponse {
+  repeated Cake data = 1;
+}
+
+message UpdateCakeRequest {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  int32 rating = 4;
+  string image = 5;
+}
+message UpdateCakeResponse {
+  Cake data = 1;
+}
+
+message DeleteCakeRequest {
+  string id = 1;
+}
+
+message DeleteCakeResponse {
+}
+
+message Cake {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  int32 rating = 4;
+  string image = 5;
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp updated_at = 7;
+}
