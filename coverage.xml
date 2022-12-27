@@ -1,10 +1,404 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.96178347" branch-rate="0" version="" timestamp="1672164598775" lines-covered="151" lines-valid="157" branches-covered="0" branches-valid="0" complexity="0">
+<coverage line-rate="0.9807692" branch-rate="0" version="" timestamp="1672168321239" lines-covered="306" lines-valid="312" branches-covered="0" branches-valid="0" complexity="0">
   <sources>
     <source>/home/teguh-satriya/Workspace/go/src/github.com/teguh-satriya/privy-go</source>
   </sources>
   <packages>
+    <package name="github.com/teguh-satriya/privy-go/server" line-rate="1" branch-rate="0" complexity="0">
+      <classes>
+        <class name="-" filename="server/cakes_server.go" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="NewCakesServer" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="19" hits="12"></line>
+                <line number="20" hits="12"></line>
+                <line number="21" hits="12"></line>
+                <line number="22" hits="12"></line>
+                <line number="23" hits="12"></line>
+                <line number="24" hits="12"></line>
+                <line number="26" hits="12"></line>
+              </lines>
+            </method>
+            <method name="WithListCakesService" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="29" hits="2"></line>
+                <line number="30" hits="2"></line>
+                <line number="31" hits="2"></line>
+                <line number="32" hits="2"></line>
+              </lines>
+            </method>
+            <method name="WithGetCakesService" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="35" hits="2"></line>
+                <line number="36" hits="2"></line>
+                <line number="37" hits="2"></line>
+                <line number="38" hits="2"></line>
+              </lines>
+            </method>
+            <method name="WithUpdateCakesService" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="41" hits="3"></line>
+                <line number="42" hits="3"></line>
+                <line number="43" hits="3"></line>
+                <line number="44" hits="3"></line>
+              </lines>
+            </method>
+            <method name="WithCreateCakesService" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="47" hits="3"></line>
+                <line number="48" hits="3"></line>
+                <line number="49" hits="3"></line>
+                <line number="50" hits="3"></line>
+              </lines>
+            </method>
+            <method name="WithDeleteCakesService" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="53" hits="2"></line>
+                <line number="54" hits="2"></line>
+                <line number="55" hits="2"></line>
+                <line number="56" hits="2"></line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="12"></line>
+            <line number="20" hits="12"></line>
+            <line number="21" hits="12"></line>
+            <line number="22" hits="12"></line>
+            <line number="23" hits="12"></line>
+            <line number="24" hits="12"></line>
+            <line number="26" hits="12"></line>
+            <line number="29" hits="2"></line>
+            <line number="30" hits="2"></line>
+            <line number="31" hits="2"></line>
+            <line number="32" hits="2"></line>
+            <line number="35" hits="2"></line>
+            <line number="36" hits="2"></line>
+            <line number="37" hits="2"></line>
+            <line number="38" hits="2"></line>
+            <line number="41" hits="3"></line>
+            <line number="42" hits="3"></line>
+            <line number="43" hits="3"></line>
+            <line number="44" hits="3"></line>
+            <line number="47" hits="3"></line>
+            <line number="48" hits="3"></line>
+            <line number="49" hits="3"></line>
+            <line number="50" hits="3"></line>
+            <line number="53" hits="2"></line>
+            <line number="54" hits="2"></line>
+            <line number="55" hits="2"></line>
+            <line number="56" hits="2"></line>
+          </lines>
+        </class>
+        <class name="CakesServer" filename="server/create_cakes_handler.go" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="CreateCake" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="12" hits="3"></line>
+                <line number="13" hits="1"></line>
+                <line number="14" hits="1"></line>
+                <line number="15" hits="1"></line>
+                <line number="17" hits="2"></line>
+                <line number="18" hits="2"></line>
+                <line number="19" hits="2"></line>
+                <line number="20" hits="2"></line>
+                <line number="21" hits="2"></line>
+                <line number="22" hits="2"></line>
+                <line number="23" hits="2"></line>
+                <line number="24" hits="2"></line>
+                <line number="25" hits="1"></line>
+                <line number="26" hits="1"></line>
+                <line number="27" hits="1"></line>
+                <line number="29" hits="1"></line>
+                <line number="30" hits="1"></line>
+                <line number="31" hits="1"></line>
+                <line number="32" hits="1"></line>
+                <line number="33" hits="1"></line>
+                <line number="34" hits="1"></line>
+                <line number="35" hits="1"></line>
+                <line number="36" hits="1"></line>
+                <line number="37" hits="1"></line>
+                <line number="38" hits="1"></line>
+                <line number="39" hits="1"></line>
+                <line number="40" hits="1"></line>
+                <line number="41" hits="1"></line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="3"></line>
+            <line number="13" hits="1"></line>
+            <line number="14" hits="1"></line>
+            <line number="15" hits="1"></line>
+            <line number="17" hits="2"></line>
+            <line number="18" hits="2"></line>
+            <line number="19" hits="2"></line>
+            <line number="20" hits="2"></line>
+            <line number="21" hits="2"></line>
+            <line number="22" hits="2"></line>
+            <line number="23" hits="2"></line>
+            <line number="24" hits="2"></line>
+            <line number="25" hits="1"></line>
+            <line number="26" hits="1"></line>
+            <line number="27" hits="1"></line>
+            <line number="29" hits="1"></line>
+            <line number="30" hits="1"></line>
+            <line number="31" hits="1"></line>
+            <line number="32" hits="1"></line>
+            <line number="33" hits="1"></line>
+            <line number="34" hits="1"></line>
+            <line number="35" hits="1"></line>
+            <line number="36" hits="1"></line>
+            <line number="37" hits="1"></line>
+            <line number="38" hits="1"></line>
+            <line number="39" hits="1"></line>
+            <line number="40" hits="1"></line>
+            <line number="41" hits="1"></line>
+          </lines>
+        </class>
+        <class name="CakesServer" filename="server/delete_cakes_handler.go" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="DeleteCake" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="10" hits="2"></line>
+                <line number="11" hits="2"></line>
+                <line number="12" hits="2"></line>
+                <line number="13" hits="2"></line>
+                <line number="14" hits="1"></line>
+                <line number="15" hits="1"></line>
+                <line number="16" hits="1"></line>
+                <line number="18" hits="1"></line>
+                <line number="19" hits="1"></line>
+                <line number="20" hits="1"></line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="2"></line>
+            <line number="11" hits="2"></line>
+            <line number="12" hits="2"></line>
+            <line number="13" hits="2"></line>
+            <line number="14" hits="1"></line>
+            <line number="15" hits="1"></line>
+            <line number="16" hits="1"></line>
+            <line number="18" hits="1"></line>
+            <line number="19" hits="1"></line>
+            <line number="20" hits="1"></line>
+          </lines>
+        </class>
+        <class name="CakesServer" filename="server/get_cakes_handler.go" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="GetCake" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="11" hits="2"></line>
+                <line number="12" hits="2"></line>
+                <line number="13" hits="2"></line>
+                <line number="14" hits="2"></line>
+                <line number="15" hits="1"></line>
+                <line number="16" hits="1"></line>
+                <line number="17" hits="1"></line>
+                <line number="19" hits="1"></line>
+                <line number="20" hits="1"></line>
+                <line number="21" hits="1"></line>
+                <line number="22" hits="1"></line>
+                <line number="23" hits="1"></line>
+                <line number="24" hits="1"></line>
+                <line number="25" hits="1"></line>
+                <line number="26" hits="1"></line>
+                <line number="27" hits="1"></line>
+                <line number="28" hits="1"></line>
+                <line number="29" hits="1"></line>
+                <line number="30" hits="1"></line>
+                <line number="31" hits="1"></line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="2"></line>
+            <line number="12" hits="2"></line>
+            <line number="13" hits="2"></line>
+            <line number="14" hits="2"></line>
+            <line number="15" hits="1"></line>
+            <line number="16" hits="1"></line>
+            <line number="17" hits="1"></line>
+            <line number="19" hits="1"></line>
+            <line number="20" hits="1"></line>
+            <line number="21" hits="1"></line>
+            <line number="22" hits="1"></line>
+            <line number="23" hits="1"></line>
+            <line number="24" hits="1"></line>
+            <line number="25" hits="1"></line>
+            <line number="26" hits="1"></line>
+            <line number="27" hits="1"></line>
+            <line number="28" hits="1"></line>
+            <line number="29" hits="1"></line>
+            <line number="30" hits="1"></line>
+            <line number="31" hits="1"></line>
+          </lines>
+        </class>
+        <class name="CakesServer" filename="server/list_cakes_handler.go" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="ListCakes" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="11" hits="2"></line>
+                <line number="12" hits="2"></line>
+                <line number="13" hits="1"></line>
+                <line number="14" hits="1"></line>
+                <line number="15" hits="1"></line>
+                <line number="17" hits="1"></line>
+                <line number="18" hits="1"></line>
+                <line number="19" hits="1"></line>
+                <line number="20" hits="1"></line>
+                <line number="21" hits="1"></line>
+                <line number="22" hits="1"></line>
+                <line number="23" hits="1"></line>
+                <line number="24" hits="1"></line>
+                <line number="25" hits="1"></line>
+                <line number="26" hits="1"></line>
+                <line number="27" hits="1"></line>
+                <line number="28" hits="1"></line>
+                <line number="29" hits="1"></line>
+                <line number="30" hits="1"></line>
+                <line number="31" hits="1"></line>
+                <line number="32" hits="1"></line>
+                <line number="33" hits="1"></line>
+                <line number="34" hits="1"></line>
+                <line number="35" hits="1"></line>
+                <line number="37" hits="1"></line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="2"></line>
+            <line number="12" hits="2"></line>
+            <line number="13" hits="1"></line>
+            <line number="14" hits="1"></line>
+            <line number="15" hits="1"></line>
+            <line number="17" hits="1"></line>
+            <line number="18" hits="1"></line>
+            <line number="19" hits="1"></line>
+            <line number="20" hits="1"></line>
+            <line number="21" hits="1"></line>
+            <line number="22" hits="1"></line>
+            <line number="23" hits="1"></line>
+            <line number="24" hits="1"></line>
+            <line number="25" hits="1"></line>
+            <line number="26" hits="1"></line>
+            <line number="27" hits="1"></line>
+            <line number="28" hits="1"></line>
+            <line number="29" hits="1"></line>
+            <line number="30" hits="1"></line>
+            <line number="31" hits="1"></line>
+            <line number="32" hits="1"></line>
+            <line number="33" hits="1"></line>
+            <line number="34" hits="1"></line>
+            <line number="35" hits="1"></line>
+            <line number="37" hits="1"></line>
+          </lines>
+        </class>
+        <class name="CakesServer" filename="server/update_cakes_handler.go" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="UpdateCake" signature="" line-rate="1" branch-rate="0" complexity="0">
+              <lines>
+                <line number="13" hits="3"></line>
+                <line number="14" hits="1"></line>
+                <line number="15" hits="1"></line>
+                <line number="16" hits="1"></line>
+                <line number="18" hits="2"></line>
+                <line number="19" hits="2"></line>
+                <line number="20" hits="2"></line>
+                <line number="21" hits="2"></line>
+                <line number="22" hits="2"></line>
+                <line number="23" hits="2"></line>
+                <line number="24" hits="2"></line>
+                <line number="25" hits="2"></line>
+                <line number="26" hits="2"></line>
+                <line number="27" hits="2"></line>
+                <line number="28" hits="2"></line>
+                <line number="29" hits="2"></line>
+                <line number="31" hits="2"></line>
+                <line number="32" hits="2"></line>
+                <line number="33" hits="2"></line>
+                <line number="34" hits="2"></line>
+                <line number="36" hits="2"></line>
+                <line number="37" hits="2"></line>
+                <line number="38" hits="2"></line>
+                <line number="39" hits="2"></line>
+                <line number="41" hits="2"></line>
+                <line number="42" hits="2"></line>
+                <line number="43" hits="2"></line>
+                <line number="44" hits="2"></line>
+                <line number="46" hits="2"></line>
+                <line number="47" hits="1"></line>
+                <line number="48" hits="1"></line>
+                <line number="49" hits="1"></line>
+                <line number="51" hits="1"></line>
+                <line number="52" hits="1"></line>
+                <line number="53" hits="1"></line>
+                <line number="54" hits="1"></line>
+                <line number="55" hits="1"></line>
+                <line number="56" hits="1"></line>
+                <line number="57" hits="1"></line>
+                <line number="58" hits="1"></line>
+                <line number="59" hits="1"></line>
+                <line number="60" hits="1"></line>
+                <line number="61" hits="1"></line>
+                <line number="62" hits="1"></line>
+                <line number="63" hits="1"></line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="3"></line>
+            <line number="14" hits="1"></line>
+            <line number="15" hits="1"></line>
+            <line number="16" hits="1"></line>
+            <line number="18" hits="2"></line>
+            <line number="19" hits="2"></line>
+            <line number="20" hits="2"></line>
+            <line number="21" hits="2"></line>
+            <line number="22" hits="2"></line>
+            <line number="23" hits="2"></line>
+            <line number="24" hits="2"></line>
+            <line number="25" hits="2"></line>
+            <line number="26" hits="2"></line>
+            <line number="27" hits="2"></line>
+            <line number="28" hits="2"></line>
+            <line number="29" hits="2"></line>
+            <line number="31" hits="2"></line>
+            <line number="32" hits="2"></line>
+            <line number="33" hits="2"></line>
+            <line number="34" hits="2"></line>
+            <line number="36" hits="2"></line>
+            <line number="37" hits="2"></line>
+            <line number="38" hits="2"></line>
+            <line number="39" hits="2"></line>
+            <line number="41" hits="2"></line>
+            <line number="42" hits="2"></line>
+            <line number="43" hits="2"></line>
+            <line number="44" hits="2"></line>
+            <line number="46" hits="2"></line>
+            <line number="47" hits="1"></line>
+            <line number="48" hits="1"></line>
+            <line number="49" hits="1"></line>
+            <line number="51" hits="1"></line>
+            <line number="52" hits="1"></line>
+            <line number="53" hits="1"></line>
+            <line number="54" hits="1"></line>
+            <line number="55" hits="1"></line>
+            <line number="56" hits="1"></line>
+            <line number="57" hits="1"></line>
+            <line number="58" hits="1"></line>
+            <line number="59" hits="1"></line>
+            <line number="60" hits="1"></line>
+            <line number="61" hits="1"></line>
+            <line number="62" hits="1"></line>
+            <line number="63" hits="1"></line>
+          </lines>
+        </class>
+      </classes>
+    </package>
     <package name="github.com/teguh-satriya/privy-go/services" line-rate="0.96178347" branch-rate="0" complexity="0">
       <classes>
         <class name="CreateCakesServiceImpl" filename="services/create_cakes_service.go" line-rate="1" branch-rate="0" complexity="0">

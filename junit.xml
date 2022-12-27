@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="22" failures="0" errors="0" time="0.268103">
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/config" timestamp="2022-12-28T01:09:58+07:00">
+<testsuites tests="39" failures="0" errors="0" time="0.343362">
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/config" timestamp="2022-12-28T02:12:00+07:00">
 		<properties>
 			<property name="go.version" value="go1.19.1 linux/amd64"></property>
 		</properties>
 	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/models" timestamp="2022-12-28T01:09:58+07:00">
+	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/models" timestamp="2022-12-28T02:12:00+07:00">
 		<properties>
 			<property name="go.version" value="go1.19.1 linux/amd64"></property>
 		</properties>
 	</testsuite>
-	<testsuite tests="0" failures="0" time="0.000000" name="github.com/teguh-satriya/privy-go/server" timestamp="2022-12-28T01:09:58+07:00">
+	<testsuite tests="17" failures="0" time="0.004000" name="github.com/teguh-satriya/privy-go/server" timestamp="2022-12-28T02:12:00+07:00">
 		<properties>
 			<property name="go.version" value="go1.19.1 linux/amd64"></property>
 		</properties>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_CreateCake/BAD_REQUEST" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_CreateCake/INTERNAL_SERVER_ERROR" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_CreateCake/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_CreateCake" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_DeleteCake/INTERNAL_SERVER_ERROR" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_DeleteCake/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_DeleteCake" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_GetCake/INTERNAL_SERVER_ERROR" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_GetCake/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_GetCake" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_ListCake/INTERNAL_SERVER_ERROR" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_ListCake/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_ListCake" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_UpdateCake/BAD_REQUEST" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_UpdateCake/INTERNAL_SERVER_ERROR" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_UpdateCake/OK" time="0.000000"></testcase>
+		<testcase classname="github.com/teguh-satriya/privy-go/server" name="TestCakesServer_UpdateCake" time="0.000000"></testcase>
 	</testsuite>
-	<testsuite tests="22" failures="0" time="0.003000" name="github.com/teguh-satriya/privy-go/services" timestamp="2022-12-28T01:09:58+07:00">
+	<testsuite tests="22" failures="0" time="0.004000" name="github.com/teguh-satriya/privy-go/services" timestamp="2022-12-28T02:12:00+07:00">
 		<properties>
 			<property name="go.version" value="go1.19.1 linux/amd64"></property>
 		</properties>
