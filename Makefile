@@ -11,6 +11,9 @@ prepare-migration:
 	curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-amd64.tar.gz | tar xvz
 	mv migrate /usr/bin &>/dev/null
 
+prepare-migration-win:
+	scoop install main/migrate
+
 create-migration:
 	$(eval timestamp := $(shell date +%s))
 	touch db/migrations/$(timestamp)_${name}.up.sql
@@ -27,10 +30,10 @@ run-migration:
 setup: 
 	go mod tidy
 	go mod vendor 
-	go install github.com/vektra/mockery/v2@latest 1> /dev/null
-	go install gotest.tools/gotestsum@latest 1> /dev/null
-	go install github.com/boumenot/gocover-cobertura@latest 1> /dev/null
-	go install github.com/ggere/gototal-cobertura@latest 1> /dev/null
+	go install github.com/vektra/mockery/v2@latest
+	go install gotest.tools/gotestsum@latest
+	go install github.com/boumenot/gocover-cobertura@latest
+	go install github.com/ggere/gototal-cobertura@latest
 
 develop: stop
 	docker-compose up -d 1> /dev/null
